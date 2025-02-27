@@ -1,0 +1,14 @@
+{
+  "name": "wishwell-backend",
+  "version": "1.0.0",
+  "description": "backend logic to power wishwell birthday congratulatory cron service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Akande Lateef",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
