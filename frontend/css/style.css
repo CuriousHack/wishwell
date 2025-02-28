@@ -215,6 +215,53 @@ button:hover:before {
   display: none;
   content: "\f26b";
 }
+.error-message {
+  color: #dc2626; /* Tailwind's red-600 */
+  font-size: 0.75rem; /* Tailwind's text-xs (12px) */
+  line-height: 1rem; /* Tailwind's leading-xs (16px) */
+}
+.hidden{
+  display: none;
+}
+
+.popup{
+  width: 400px;
+  background: #1e2247;
+  border-radius: 6px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 30px 60px;
+  color: white;
+}
+
+.popup img{
+  width: 100px;
+  margin-top: -50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2{
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+
+.popup button{
+  width: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background-color: #3b3a3a;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
 
 @media (max-width: 991px) {
   .inner {

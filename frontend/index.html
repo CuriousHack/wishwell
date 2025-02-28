@@ -10,25 +10,29 @@
 		
 		<!-- STYLE CSS -->
 		<link rel="stylesheet" href="css/style.css">
+		<!-- SCRIPT JS-->
+		 <script src="js/email.js" defer></script>
 	</head>
-
 	<body>
 
 		<div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg');">
 			<div class="inner">
-				<form action="">
+				<form action="" id="form">
 					<h3>Subscription Form</h3>
 						<div class="form-wrapper">
 							<label for="">Username</label>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control" name="username">
+							<p class="error-message hidden" id="username-error"></p>
 						</div>
 					<div class="form-wrapper">
 						<label for="">Email</label>
-						<input type="text" class="form-control">
+						<input type="text" class="form-control" name="email">
+						<p class="error-message hidden" id="email-error"></p>
 					</div>
 					<div class="form-wrapper">
 						<label for="">Date of Birth</label>
-						<input type="date" class="form-control">
+						<input type="date" class="form-control" name="dob">
+						<p class="error-message hidden" id="dob-error">dd</p>
 					</div>
 					<div class="checkbox">
 						<label>
@@ -39,6 +43,14 @@
 					<button>Subscribe Now</button>
 				</form>
 			</div>
+		</div>
+
+		<div class="popup hidden" id="popup">
+			<img src="images/tick.png" alt="">
+			<!-- <svg xmlns="http://www.w3.org/2000/svg" height="240px" viewBox="0 -960 960 960" width="240px" fill="#e8eaed"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg> -->
+			<h2>Thank You!</h2>
+			<p>Your Details has been Successfully Submited. Thanks!</p>
+			<button type="button">OK</button>
 		</div>
 		
 	</body>
