@@ -112,16 +112,6 @@ form {
   border: 1px solid #1e2247;
 }
 
-select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-  padding-left: 20px;
-}
-select option[value=""][disabled] {
-  display: none;
-}
-
 button {
   border: none;
   width: 152px;
@@ -220,6 +210,11 @@ button:hover:before {
   font-size: 0.75rem; /* Tailwind's text-xs (12px) */
   line-height: 1rem; /* Tailwind's leading-xs (16px) */
 }
+.success-message{
+  color: green;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
 .hidden{
   display: none;
 }
@@ -280,6 +275,9 @@ button:hover:before {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
+  }
+  .popup{
+    width: 300px;
   }
 }
 
