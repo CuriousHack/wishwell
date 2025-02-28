@@ -18,9 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         okButton.addEventListener("click", function () {
             popup.classList.add("hidden");
             wrapper.classList.remove("hidden");
-            // clearErrors()
             form.reset();
-            // location.reload();
           });
     }
 
@@ -66,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!isValid) return; // Stop form submission if validation fails
 
         try {
-            const response = await fetch("http://localhost:3005/send-email", {
+            const response = await fetch("http://localhost:3005/subscribe", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -76,7 +74,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (!response.ok) {
                 if (response.status === 429) {
-                    throw new Error("Too many requests, please try again later!");
+                    throw new Error("Yo! Trying to subscribe multiple times? 😅 Give it a breather and try again later!");
+                }
+                if (response.status === 401) {
+                    throw new Error("Slow down, superstar! You're already subscribed. No double dipping! 😆");
                 }
                 throw new Error(`${response.statusText}`);
             }
@@ -91,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } catch (error) {
             apiResponse.innerHTML = error.message;
             apiResponse.classList.remove("success-message");
+            apiResponse.classList.remove("hidden");
             apiResponse.classList.add("error-message");
         }
     });
