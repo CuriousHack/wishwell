@@ -4,7 +4,7 @@ const newSubscriberService = async (username, email, dob) => {
 
     //confirm if email doesn't exist
     const subscriberExist = await Subscriber.findOne({ email });
-    if(subscriberExist) error(401, 'Subscriber already exist!')
+    if(subscriberExist) error(401, "Slow down, superstar! You're already subscribed. No double dipping! 😆")
     
     //add the subscriber information into the database
     try{
