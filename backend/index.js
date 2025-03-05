@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 9000;
 
 app.use(cors());
 app.use(express.json());
-app.use('/send-email', router);
+// app.use('/send-email', router);
 app.use('/subscribe', subscribeRoute);
 
 connectDb();
