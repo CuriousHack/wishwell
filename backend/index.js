@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const dotenv = require('dotenv')
 const connectDb = require('./utils/db');
-const router = require('./Mailer/routes/mailerRoutes')
+// const router = require('./Mailer/routes/mailerRoutes')
 const subscribeRoute = require('./Subscriber/routes/subscriberRoutes');
 dotenv.config();
 const app = express();
