@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!isValid) return; // Stop form submission if validation fails
 
         try {
-            const response = await fetch("http://localhost:3005/subscribe", {
+            const response = await fetch("https://wishwell.onrender.com/subscribe", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
