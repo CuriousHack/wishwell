@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 9000;
 // job();
 // app.use(cors());
 app.use(cors({ origin: "*" }));
+app.set("trust proxy", true);
 app.use(express.json());
 app.use('/send-email', router);
 app.use('/subscribe', subscribeRoute);
