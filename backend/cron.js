@@ -5,7 +5,7 @@ const connectDb = require('./utils/db');
 const startCron = async () => {
     await connectDb(); // Ensure MongoDB is connected before starting the cron job
 
-    schedule.scheduleJob('0 8 * * *', async function () {
+    schedule.scheduleJob('30 9 * * *', async function () {
         console.log('⏳ Running scheduled email job...');
 
         try {

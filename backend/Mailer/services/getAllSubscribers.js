@@ -15,7 +15,7 @@ const getTodayBirthdaySubscribers = async () => {
             },
         });
 
-        console.log("📡 Found subscribers:", subscribers);
+        console.log("📡 Found subscribers:");
         return subscribers || [];
     } catch (error) {
         console.error("❌ Error fetching subscribers:", error);
