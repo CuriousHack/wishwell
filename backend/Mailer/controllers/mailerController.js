@@ -14,7 +14,7 @@ const subscribers = async (req, res) => {
                 email: subscriber.email,
             };
             sendToQueue(emailData);
-            // console.log(emailData);
+            console.log(emailData);
         });
     } catch (error) {
         console.error("❌ Error in subscribers controller:", error);
