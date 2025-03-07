@@ -10,6 +10,7 @@
   },
   "author": "Akande Lateef",
   "license": "ISC",
+  "type":"commonjs",
   "dependencies": {
     "amqplib": "^0.10.5",
     "cors": "^2.8.5",

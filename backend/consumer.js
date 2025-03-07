@@ -22,4 +22,4 @@ const consumeQueue = async () => {
 };
 
 // Start the consumer
-consumeQueue();
+module.exports = consumeQueue;
