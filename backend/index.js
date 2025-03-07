@@ -5,7 +5,7 @@ const connectDb = require('./utils/db');
 const router = require('./Mailer/routes/mailerRoutes');
 const subscribeRoute = require('./Subscriber/routes/subscriberRoutes');
 const consumeQueue = require('./consumer');
-const startCron = require('./cron');
+// const startCron = require('./cron');
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 9000;
@@ -23,7 +23,7 @@ connectDb();
 
 //processes
 consumeQueue();
-startCron();
+// startCron();
 
 
 app.listen(PORT, () => {
