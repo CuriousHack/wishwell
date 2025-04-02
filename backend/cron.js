@@ -14,7 +14,7 @@ const startCron = async () => {
         console.log('✅ Database connected.');
 
         // Schedule the cron job
-        schedule.scheduleJob('00 19 * * *', async function () {
+        schedule.scheduleJob('04 19 * * *', async function () {
             console.log('⏳ Running scheduled email job...');
 
             try {
@@ -32,5 +32,20 @@ const startCron = async () => {
         process.exit(1); // Exit process if the server fails to start
     }
 };
+//the code above is a tested and verified code for execution of cron job at exactly 0700am everyday
+//and executing the getAndSendMail function. Render doesn't support background processes as it's part of their paid plan
+//thus the outsourcing of the process to an external party and consumed through API. Apologies for any inconvienience.
 
-module.exports = startCron
+const manualExecution = async () => {
+    try {
+        await getAndSendMail();
+        console.log('✅ Email job completed.');
+    } catch (error) {
+        console.error('❌ Error in scheduled job:', error);
+    }
+};
+
+module.exports = {
+    startCron,
+    manualExecution
+}

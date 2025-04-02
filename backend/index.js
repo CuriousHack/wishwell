@@ -5,7 +5,7 @@ const connectDb = require('./utils/db');
 const router = require('./Mailer/routes/mailerRoutes');
 const subscribeRoute = require('./Subscriber/routes/subscriberRoutes');
 const consumeQueue = require('./consumer');
-const startCron = require('./cron');
+const cronJob = require('./cron');
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 9000;
@@ -17,12 +17,20 @@ app.use(express.json());
 
 //routes
 app.use('/subscribe', subscribeRoute);
+//api endpoint for external cron execution
+app.get('/start-cron', (req, res) => {
+    cronJob.manualExecution();
+    res.end()
+
+})
 
 connectDb();
 
 //processes
 consumeQueue();
-startCron();
+
+//comment out to use internal cron process
+// cronJob.startCron();
 
 
 app.listen(PORT, () => {
