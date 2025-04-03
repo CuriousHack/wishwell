@@ -16,11 +16,15 @@ app.set("trust proxy", true);
 app.use(express.json());
 
 //routes
+app.get('/', (req, res) => {
+    console.log('App stil running ')
+    res.end();
+})
 app.use('/subscribe', subscribeRoute);
 //api endpoint for external cron execution
 app.get('/start-cron', (req, res) => {
     cronJob.manualExecution();
-    res.end()
+    res.end();
 
 })
 
