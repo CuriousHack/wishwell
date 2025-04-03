@@ -14,7 +14,7 @@ const startCron = async () => {
         console.log('✅ Database connected.');
 
         // Schedule the cron job
-        schedule.scheduleJob('04 19 * * *', async function () {
+        schedule.scheduleJob('0 7 * * *', async function () {
             console.log('⏳ Running scheduled email job...');
 
             try {
